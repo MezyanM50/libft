@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmezyan <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/31 17:43:55 by mmezyan           #+#    #+#             */
+/*   Updated: 2023/10/31 17:45:57 by mmezyan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
@@ -19,10 +31,4 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	dst[i] = '\0';
 	return (ft_strlen(dst) + ft_strlen(src));
-}
-int main()
-{
-	char *src = " mezyan";
-	char dst[10] = "mouad";
-	printf("%ld \n%s",ft_strlcat(dst,src,10),dst);
 }

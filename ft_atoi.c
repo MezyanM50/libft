@@ -1,26 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmezyan <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/31 17:13:02 by mmezyan           #+#    #+#             */
+/*   Updated: 2023/10/31 17:22:14 by mmezyan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *str)
 {
 	int	i;
-	int	n;
 	int	s;
+	int	r;
 
 	i = 0;
-	n = 0;
 	s = 1;
-	while (nptr[i] == ' ')
+	r = 0;
+	while (str[i] && str[i] == ' ')
 		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	if (str[i] && (str[i] == '-' || str[i] == '+'))
 	{
-		if (nptr[i] == '-')
+		if (str[i] == '-')
 			s *= -1;
 		i++;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	while (str[i] && ft_isdigit(str[i]))
 	{
-		n = (n * 10) + (nptr[i] - 48);
+		r = (r * 10) + (str[i] - 48);
 		i++;
 	}
-	return (n * s);
+	return (r * s);
 }
