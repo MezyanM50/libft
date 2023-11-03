@@ -15,15 +15,24 @@
 char	*ft_strchr(const char *s, int c)
 {
 	int		i;
-	char	*str;
+	char		*str;
+	unsigned char	ch;
 
 	i = 0;
 	str = (char *)s;
-	while (str[i])
+	ch = (unsigned char)c;
+	while (str[i] )
 	{
-		if (c == str[i])
+		if (ch == (unsigned char)str[i])
 			return (str + i);
 		i++;
 	}
 	return (NULL);
+}
+int main(void)
+{
+	char *s = "tripouille";
+	char *c = ft_strchr(s,0);
+	printf ("%c",*c);
+	return (0);
 }
