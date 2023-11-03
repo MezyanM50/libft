@@ -6,7 +6,7 @@
 /*   By: mmezyan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 18:50:30 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/11/02 14:26:38 by mmezyan          ###   ########.fr       */
+/*   Updated: 2023/11/03 13:55:30 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,14 @@ char	*ft_worddup(char const *s, int finish, int start)
 
 	i = 0;
 	len = finish - start;
-	str = (char *)malloc(len * sizeof(char));
-	while (i < len)
+	str = (char *)malloc(len * sizeof(char) + 1);
+	while (s[start] && i < len)
 	{
 		str[i] = s[start];
 		i++;
 		start++;
 	}
+	str[i] = '\0';
 	return (str);
 }
 
@@ -65,12 +66,12 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	str = (char **) malloc(ft_countword(s, c) * sizeof(char *));
+	start = 1;
+	str = (char **) malloc(ft_countword(s, c) * sizeof(char *) + 1);
 	if (str == NULL)
 		return (NULL);
 	while (s[i])
 	{
-		start = -1;
 		while (ft_check(s[i], c))
 			i++;
 		start = i;
@@ -78,9 +79,10 @@ char	**ft_split(char const *s, char c)
 			i++;
 		if (start >= 0)
 		{
-			str[j] = ft_worddup(s, i, start);
-			j++;
+			str[j++] = ft_worddup(s, i, start);
+			start = -1;
 		}
 	}
+	str[i] = "\0";
 	return (str);
 }

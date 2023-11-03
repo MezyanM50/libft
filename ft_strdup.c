@@ -6,7 +6,7 @@
 /*   By: mmezyan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 20:25:17 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/11/01 12:54:36 by mmezyan          ###   ########.fr       */
+/*   Updated: 2023/11/03 11:33:10 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ char	*ft_strdup(const char *s1)
 	size_t	i;
 	char	*str;
 
-	if (s1 == NULL)
+	if (!s1)
 		return (NULL);
 	s = ft_strlen(s1);
-	str = (char *) malloc(s * sizeof(char));
+	str = (char *) malloc(s * sizeof(char) + 1);
 	if (str)
 	{
 		i = 0;
@@ -30,6 +30,7 @@ char	*ft_strdup(const char *s1)
 			str[i] = s1[i];
 			i++;
 		}
+		str[i] = '\0';
 	}
 	return (str);
 }
