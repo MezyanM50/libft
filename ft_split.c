@@ -12,77 +12,70 @@
 
 #include "libft.h"
 
-int	ft_check(char s, char c)
+int	ft_count_words(char *s, char c)
 {
-	if (s == c)
-		return (1);
-	return (0);
-}
-
-int	ft_countword(char const *s, char c)
-{
+	size_t	i;
+	size_t	len;
+	size_t	oldi;
 	int	count;
-	int	i;
 
+	len = ft_strlen(s);
 	i = 0;
-	count = 0;
-	while (s[i])
+	count = 0 ;
+	while (i < len)
 	{
-		while (ft_check(s[i], c))
+		while (i < len && s[i] == c)
 			i++;
-		if (s[i])
+		oldi = i;
+		while (i < len && s[i] != c)
+			i++;
+		if (i > oldi)
 			count++;
-		while (s[i] && !ft_check(s[i], c))
-			i++;
 	}
 	return (count);
 }
 
-char	*ft_worddup(char const *s, int finish, int start)
+char	*ft_worddup(char *s,size_t start,size_t end)
 {
-	int		i;
-	int		len;
 	char	*str;
-
+	size_t	len;
+	int	i;
+	
+	len = end - start;
 	i = 0;
-	len = finish - start;
-	str = (char *)malloc(len * sizeof(char) + 1);
-	while (s[start] && i < len)
-	{
-		str[i] = s[start];
-		i++;
-		start++;
-	}
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
+		return (NULL);
+	while (start < end)
+		str[i++] = s[start++];
 	str[i] = '\0';
 	return (str);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**str;
-	int		i;
-	int		j;
-	int		start;
+	char	**split;
+	size_t	i;
+	size_t	oldi;
+	int	j;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	j = 0;
-	start = 1;
-	str = (char **) malloc(ft_countword(s, c) * sizeof(char *) + 1);
-	if (str == NULL)
+	split =(char **)malloc(sizeof(char *) * (ft_count_words((char *)s,c) + 1));
+	if (split == NULL)
 		return (NULL);
-	while (s[i])
+	while (i < ft_strlen(s))
 	{
-		while (ft_check(s[i], c))
+		while (i < ft_strlen(s) && s[i] == c)
 			i++;
-		start = i;
-		while (s[i] && !ft_check(s[i], c))
+		oldi = i;
+		while (i < ft_strlen(s) && s[i] != c)
 			i++;
-		if (start >= 0)
-		{
-			str[j++] = ft_worddup(s, i, start);
-			start = -1;
-		}
+		if (i > oldi)
+			 split[j++] = ft_worddup((char *)s, oldi, i);
 	}
-	str[i] = "\0";
-	return (str);
+	split[j] = 0;
+	return (split);
 }
