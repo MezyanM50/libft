@@ -6,7 +6,7 @@
 /*   By: mmezyan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:02:36 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/11/02 15:05:30 by mmezyan          ###   ########.fr       */
+/*   Updated: 2023/11/04 19:58:46 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while (lst->next != NULL)
-		lst = lst->next;
+	if (lst != NULL)
+	{
+		while (lst->next)
+			lst = lst->next;
+	}
 	return (lst);
 }

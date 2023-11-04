@@ -6,7 +6,7 @@
 /*   By: mmezyan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:06:38 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/11/02 16:14:20 by mmezyan          ###   ########.fr       */
+/*   Updated: 2023/11/04 18:57:52 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void ft_lstadd_back(t_list **lst, t_list *new)
 {
+	if (!lst || !new)
+		return ;
 	*lst = ft_lstlast(*lst);
-	lst->next = new;
+	(*lst)->next = new;
 	new->next = NULL;
 }

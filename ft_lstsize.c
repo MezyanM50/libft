@@ -6,7 +6,7 @@
 /*   By: mmezyan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:56:11 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/11/02 15:02:08 by mmezyan          ###   ########.fr       */
+/*   Updated: 2023/11/04 20:00:26 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ int	ft_lstsize(t_list *lst)
 	int	count;
 
 	count = 0;
-	while (lst->next != NULL)
+	if (!lst)
+		return (0);
+	while (lst)
 	{
-		count++;
 		lst = lst->next;
+		count++;
 	}
 	return (count);
 }
