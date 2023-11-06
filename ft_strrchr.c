@@ -6,7 +6,7 @@
 /*   By: mmezyan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:51:02 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/11/05 16:01:15 by mmezyan          ###   ########.fr       */
+/*   Updated: 2023/11/06 15:49:38 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
-	char	*str;
+	int				i;
+	char			*str;
 	unsigned char	ch;
 
 	ch = (unsigned char)c;

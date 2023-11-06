@@ -6,7 +6,7 @@
 /*   By: mmezyan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 14:58:59 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/11/03 18:18:47 by mmezyan          ###   ########.fr       */
+/*   Updated: 2023/11/06 15:38:05 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 unsigned int	ft_number_size(int number)
 {
 	unsigned int	length;
-	
+
 	length = 0;
 	if (number == 0)
 		return (1);
@@ -31,7 +31,7 @@ unsigned int	ft_number_size(int number)
 
 char	*ft_itoa(int n)
 {
-	char		*string;
+	char			*string;
 	unsigned int	number;
 	unsigned int	length;
 

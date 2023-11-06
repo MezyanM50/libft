@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmezyan <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:24:11 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/11/01 12:50:45 by mmezyan          ###   ########.fr       */
+/*   Updated: 2023/11/06 17:32:00 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*d;
 	unsigned char	*s;
 
+	if (!dest && !src)
+		return (dest);
 	i = 0;
 	d = (unsigned char *)dest;
 	s = (unsigned char *)src;

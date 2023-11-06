@@ -6,7 +6,7 @@
 /*   By: mmezyan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 13:03:32 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/10/31 13:08:02 by mmezyan          ###   ########.fr       */
+/*   Updated: 2023/11/06 15:37:31 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isalnum(int c)
 {
-return (ft_isdigit(c) || ft_isalpha(c));
+	return (ft_isdigit(c) || ft_isalpha(c));
 }
