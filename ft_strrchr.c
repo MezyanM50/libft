@@ -29,10 +29,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-#include "string.h"
-int	main()
-{
- char *s = "hello-world-and-everyone";
- char c = 0;
-printf ("%s",strrchr(s,c));
-}

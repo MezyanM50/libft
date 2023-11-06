@@ -17,16 +17,11 @@ t_list	*ft_lstnew(void *content)
 	t_list	*new;
 	
 	if (!content)
-		return (NULL);
+		return (0);
 	new = (t_list *)malloc(sizeof(t_list));
 	if(!new)
-		return (NULL);
+		return (0);
 	new->content = content;
 	new->next = NULL;
 	return (new);
 }
-/*int main()
-{
-	t_list *n = ft_lstnew(NULL);
-	printf("%i", (*(int *)(n->content)));
-}*/
