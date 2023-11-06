@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 14:19:48 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/11/06 14:03:24 by mmezyan          ###   ########.fr       */
+/*   Updated: 2023/11/06 15:21:54 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,5 @@ void ft_lstclear(t_list **lst, void (*del)(void *))
 		del(current->content);
 		free(current);
 	}
+	*lst = 0;
 }
