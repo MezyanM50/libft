@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	if (!big && !len)
 		return (NULL);
-	if (!little || little == big)
+	if (little == big)
 		return ((char *)big);
 	i = 0;
 	while (big[i])
