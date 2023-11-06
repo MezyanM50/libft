@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmezyan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 16:22:30 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/11/04 18:59:14 by mmezyan          ###   ########.fr       */
+/*   Created: 2023/11/05 14:29:58 by mmezyan           #+#    #+#             */
+/*   Updated: 2023/11/05 15:50:28 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (!f)
+	if (!lst && !f)
 		return ;
 	while (lst)
 	{

@@ -5,17 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmezyan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 15:39:03 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/11/04 18:58:28 by mmezyan          ###   ########.fr       */
+/*   Created: 2023/11/05 13:00:57 by mmezyan           #+#    #+#             */
+/*   Updated: 2023/11/05 14:22:48 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst || !del)
+	if (!del && !lst)
 		return ;
 	(*del)(lst->content);
 	free(lst);
+	lst = NULL;
 }

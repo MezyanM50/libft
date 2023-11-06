@@ -6,7 +6,7 @@
 /*   By: mmezyan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:51:02 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/10/31 15:56:14 by mmezyan          ###   ########.fr       */
+/*   Updated: 2023/11/05 16:01:15 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,11 @@ char	*ft_strrchr(const char *s, int c)
 		i--;
 	}
 	return (NULL);
+}
+#include "string.h"
+int	main()
+{
+ char *s = "hello-world-and-everyone";
+ char c = 0;
+printf ("%s",strrchr(s,c));
 }

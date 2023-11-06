@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmezyan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 15:52:24 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/11/04 18:58:52 by mmezyan          ###   ########.fr       */
+/*   Created: 2023/11/05 14:19:48 by mmezyan           #+#    #+#             */
+/*   Updated: 2023/11/05 15:20:08 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ void ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 
-	if (!del || !lst)
+	tmp = NULL;
+	if (!lst && !del)
 		return ;
-	while (lst && *lst)
+	while (tmp)
 	{
 		tmp = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = tmp;
+		(*del)((*lst)->content);
+		free((*lst));
+		(*lst) = tmp;
 	}
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmezyan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 14:56:11 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/11/04 20:00:26 by mmezyan          ###   ########.fr       */
+/*   Created: 2023/11/05 12:22:52 by mmezyan           #+#    #+#             */
+/*   Updated: 2023/11/05 12:40:23 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	count;
+	int	i;
 
-	count = 0;
-	if (!lst)
-		return (0);
+	i = 0;
 	while (lst)
 	{
+		i++;
 		lst = lst->next;
-		count++;
 	}
-	return (count);
+	return (i);
 }

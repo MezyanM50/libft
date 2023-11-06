@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmezyan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 14:43:09 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/11/04 18:56:12 by mmezyan          ###   ########.fr       */
+/*   Created: 2023/11/05 12:18:14 by mmezyan           #+#    #+#             */
+/*   Updated: 2023/11/05 13:15:59 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 void ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (lst && new)
+	if (!lst)
+		return ;
+	if (new)
 	{
-		if (*lst)
-			new->next = *lst;
+		new->next = *lst;
 		*lst = new;
 	}
 }
