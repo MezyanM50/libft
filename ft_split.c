@@ -6,7 +6,7 @@
 /*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 18:50:30 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/11/10 13:12:10 by mmezyan          ###   ########.fr       */
+/*   Updated: 2023/11/10 13:15:51 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	ft_count_words(char *s, char c)
 
 static void	ft_free(char **split, int len)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < len)
