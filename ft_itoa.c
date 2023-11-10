@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmezyan <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 14:58:59 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/11/06 15:38:05 by mmezyan          ###   ########.fr       */
+/*   Updated: 2023/11/10 11:25:25 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_number_size(int number)
+static unsigned int	ft_number_size(int number)
 {
 	unsigned int	length;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmezyan <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mmezyan <mmezyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:27:44 by mmezyan           #+#    #+#             */
-/*   Updated: 2023/11/06 15:50:42 by mmezyan          ###   ########.fr       */
+/*   Updated: 2023/11/10 11:41:06 by mmezyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	while (i < finish)
 	{
-		str[i] = s[start + (unsigned int) i];
+		str[i] = s[start + i];
 		i++;
 	}
 	str[i] = '\0';
